@@ -47,6 +47,11 @@ public class GameUI : MonoBehaviour
         }
     }
 
+    public void LoadLevel(int id)
+    {
+        _gameController.LoadLevel(id);
+    }
+
     public void NextLevel()
     {
         _gameController.LoadNextLevel();

@@ -35,13 +35,18 @@ public class GameController : MonoBehaviour
         _playerController.ResetPosition(_playerStart.position);
     }
 
+    public void LoadLevel(int id)
+    {
+        SceneManager.LoadScene(id);
+    }
+
     public void LoadNextLevel()
     {
         GameAnalytics.NewDesignEvent(currentLevel.ToString());
 
         if (currentLevel + 1 < _gameData._levels.Count)
         {
-            SceneManager.LoadScene(currentLevel + 1);
+            LoadLevel(currentLevel + 1);
         }
     }
 }
